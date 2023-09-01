@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Product List</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Product p in (IEnumerable<Product>)ViewData["list"])
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.price</td>
+            </tr>
+        }
+       
+    </tbody>
+   
+</table>
+
+    <h1>By using view Bag</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (Product p in ViewBag.ProductList)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.price</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

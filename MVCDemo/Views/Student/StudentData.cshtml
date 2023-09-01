@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "StudentData";
+}
+
+<h1>Student Data</h1>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(Student s in (IEnumerable<Student>)ViewData["list"])
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.Name</td>
+                <td>@s.Course</td>
+                <td>@s.Duration</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
